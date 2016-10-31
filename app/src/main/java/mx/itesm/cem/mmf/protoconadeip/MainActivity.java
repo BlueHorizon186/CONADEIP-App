@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private class CustomAdapter extends FragmentPagerAdapter {
-        private String frag []={"Apartado 1","Apartado 2","Apartado 3"};
+        private String frag []={"Posiciones", "Calendario", "Configuracion"};
 
         public CustomAdapter(FragmentManager supportFragmentManager, Context applicationContext) {
             super(supportFragmentManager);
