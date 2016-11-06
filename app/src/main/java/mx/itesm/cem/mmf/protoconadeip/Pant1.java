@@ -14,10 +14,8 @@ import org.json.JSONArray;
 import java.util.ArrayList;
 
 import mx.itesm.cem.mmf.protoconadeip.corelogic.PositionsFetcher;
+import mx.itesm.cem.mmf.protoconadeip.corelogic.coreconstants.PositionData;
 
-/**
- * Created by sandWolf on 06/10/2016.
- */
 public class Pant1 extends Fragment {
 
     @Nullable
@@ -31,25 +29,26 @@ public class Pant1 extends Fragment {
         String[] values = {"Error al cargar las posiciones actuales."};
 
         try {
-            JSONArray posArr = fetcher.execute(
-                    "Mayor", "Independencia").get();
-            ArrayList<String> posLst = new ArrayList<>();
+            JSONArray positionsArr = fetcher.execute("Mayor", "Independencia").get();
+            ArrayList<String> positionsLst = new ArrayList<>();
 
-            for (int i = 0; i < posArr.length(); i++) {
-                JSONArray next = posArr.getJSONArray(i);
-                String pos = next.getString(0) + "  " + next.getString(2) + "  "
-                        + next.getString(3) + "  " + next.getString(7) + "  "
-                        + next.getString(8);
-                posLst.add(pos);
+            for (int i = 0; i < positionsArr.length(); i++) {
+                JSONArray next = positionsArr.getJSONArray(i);
+                String pos = next.getString(PositionData.TEAM_NAME.num()) + "  "
+                        + next.getString(PositionData.PLAYED_GAMES.num()) + "  "
+                        + next.getString(PositionData.WON_GAMES.num()) + "  "
+                        + next.getString(PositionData.POINTS.num()) + "  "
+                        + next.getString(PositionData.PERCENTAGE.num());
+                positionsLst.add(pos);
             }
 
-            values = posLst.toArray(new String[posLst.size()]);
+            values = positionsLst.toArray(new String[positionsLst.size()]);
 
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(),
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(),
                 android.R.layout.simple_list_item_1, values);
 
         ListView lv = (ListView) screenRootView.findViewById(R.id.listView1);
