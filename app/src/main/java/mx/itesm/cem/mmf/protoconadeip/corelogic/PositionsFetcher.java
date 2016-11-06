@@ -19,13 +19,12 @@ public class PositionsFetcher extends AsyncTask<String, Void, JSONArray> {
                 + "&grupo=" + group;
 
         try {
-            JSONObject posObj = new JSONObject(
+            JSONObject positionsObj = new JSONObject(
                     jsonReader.readJSONFromServer(positionsUrl));
-            return posObj.getJSONArray("posiciones");
+            return positionsObj.getJSONArray("posiciones");
 
         } catch (Exception e) {
             e.printStackTrace();
-
         }
         return null;
     }
