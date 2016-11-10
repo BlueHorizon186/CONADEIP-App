@@ -15,6 +15,7 @@ import java.util.ArrayList;
 
 import mx.itesm.cem.mmf.protoconadeip.corelogic.PositionsFetcher;
 import mx.itesm.cem.mmf.protoconadeip.corelogic.coreconstants.PositionData;
+import mx.itesm.cem.mmf.protoconadeip.corelogic.coreuiadapters.PositionsListAdapter;
 
 public class Pant1 extends Fragment {
 
@@ -26,6 +27,8 @@ public class Pant1 extends Fragment {
 
         View screenRootView = inflater.inflate(R.layout.pag1, container, false);
         String[] itemname = {"One", "Two", "Three", "Four"};
+        Integer imageId = R.drawable.flower_ice;
+
         /*PositionsFetcher fetcher = new PositionsFetcher();
         String[] values = {"Error al cargar las posiciones actuales."};
 
@@ -47,13 +50,18 @@ public class Pant1 extends Fragment {
 
         } catch (Exception e) {
             e.printStackTrace();
-        }*/
+        }
 
         ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(),
                 R.layout.positions_listrow_layout,
                 R.id.playedGames,
                 itemname);
 
+        ListView lv = (ListView) screenRootView.findViewById(R.id.positionsListView);
+        lv.setAdapter(adapter);*/
+
+        PositionsListAdapter adapter =
+                new PositionsListAdapter(getActivity(), itemname, imageId);
         ListView lv = (ListView) screenRootView.findViewById(R.id.positionsListView);
         lv.setAdapter(adapter);
         return screenRootView;
