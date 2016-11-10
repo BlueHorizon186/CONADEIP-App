@@ -26,10 +26,10 @@ public class Pant1 extends Fragment {
                              @Nullable Bundle savedInstanceState) {
 
         View screenRootView = inflater.inflate(R.layout.pag1, container, false);
-        String[] itemname = {"One", "Two", "Three", "Four"};
+        //String[] itemname = {"One", "Two", "Three", "Four"};
         Integer imageId = R.drawable.flower_ice;
 
-        /*PositionsFetcher fetcher = new PositionsFetcher();
+        PositionsFetcher fetcher = new PositionsFetcher();
         String[] values = {"Error al cargar las posiciones actuales."};
 
         try {
@@ -38,12 +38,12 @@ public class Pant1 extends Fragment {
 
             for (int i = 0; i < positionsArr.length(); i++) {
                 JSONArray next = positionsArr.getJSONArray(i);
-                String pos = next.getString(PositionData.TEAM_NAME.num()) + "  "
+                positionsLst.add(next.getString(PositionData.TEAM_NAME.num()));
+                /*String pos = next.getString(PositionData.TEAM_NAME.num()) + "  "
                         + next.getString(PositionData.PLAYED_GAMES.num()) + "  "
                         + next.getString(PositionData.WON_GAMES.num()) + "  "
                         + next.getString(PositionData.POINTS.num()) + "  "
-                        + next.getString(PositionData.PERCENTAGE.num());
-                positionsLst.add(pos);
+                        + next.getString(PositionData.PERCENTAGE.num());*/
             }
 
             values = positionsLst.toArray(new String[positionsLst.size()]);
@@ -52,6 +52,7 @@ public class Pant1 extends Fragment {
             e.printStackTrace();
         }
 
+        /*
         ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(),
                 R.layout.positions_listrow_layout,
                 R.id.playedGames,
@@ -61,7 +62,7 @@ public class Pant1 extends Fragment {
         lv.setAdapter(adapter);*/
 
         PositionsListAdapter adapter =
-                new PositionsListAdapter(getActivity(), itemname, imageId);
+                new PositionsListAdapter(getActivity(), values, imageId);
         ListView lv = (ListView) screenRootView.findViewById(R.id.positionsListView);
         lv.setAdapter(adapter);
         return screenRootView;
