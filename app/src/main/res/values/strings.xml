@@ -1,6 +1,7 @@
 <resources>
-    <string name="app_name">protoCONADEIP</string>
-    <string name="P1">Pantalla1</string>
+    <string name="app_name">Conadeip</string>
+    <string name="P1">Pantalla 1</string>
     <string name="P2">Pantalla 2</string>
     <string name="P3">Pantalla 3</string>
+    <string name="team_logo">Team Logo</string>
 </resources>

@@ -25,7 +25,8 @@ public class Pant1 extends Fragment {
                              @Nullable Bundle savedInstanceState) {
 
         View screenRootView = inflater.inflate(R.layout.pag1, container, false);
-        PositionsFetcher fetcher = new PositionsFetcher();
+        String[] itemname = {"One", "Two", "Three", "Four"};
+        /*PositionsFetcher fetcher = new PositionsFetcher();
         String[] values = {"Error al cargar las posiciones actuales."};
 
         try {
@@ -46,12 +47,14 @@ public class Pant1 extends Fragment {
 
         } catch (Exception e) {
             e.printStackTrace();
-        }
+        }*/
 
         ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(),
-                android.R.layout.simple_list_item_1, values);
+                R.layout.positions_listrow_layout,
+                R.id.playedGames,
+                itemname);
 
-        ListView lv = (ListView) screenRootView.findViewById(R.id.listView1);
+        ListView lv = (ListView) screenRootView.findViewById(R.id.positionsListView);
         lv.setAdapter(adapter);
         return screenRootView;
     }
