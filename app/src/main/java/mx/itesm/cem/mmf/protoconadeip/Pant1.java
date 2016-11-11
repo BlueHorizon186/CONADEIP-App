@@ -6,15 +6,12 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import org.json.JSONArray;
-import org.json.JSONException;
 
 import java.util.ArrayList;
 
-import mx.itesm.cem.mmf.protoconadeip.corelogic.ImageURLsContainer;
 import mx.itesm.cem.mmf.protoconadeip.corelogic.PositionsFetcher;
 import mx.itesm.cem.mmf.protoconadeip.corelogic.coreconstants.PositionData;
 import mx.itesm.cem.mmf.protoconadeip.corelogic.coreuiadapters.PositionsListAdapter;
@@ -29,14 +26,6 @@ public class Pant1 extends Fragment {
 
         View screenRootView = inflater.inflate(R.layout.pag1, container, false);
         Integer imageId = R.drawable.flower_ice;
-
-        try {
-            String testImgUrl = ImageURLsContainer.getInstance()
-                                                  .getImageURLs()
-                                                  .getString("Ciudad de Mexico");
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
 
         PositionsFetcher fetcher = new PositionsFetcher();
         String[] values = {"Error al cargar las posiciones actuales."};
