@@ -9,6 +9,8 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import mx.itesm.cem.mmf.protoconadeip.corelogic.ImageURLsContainer;
+
 public class MainActivity extends AppCompatActivity {
 
     String[] opciones2 = {"X1","X2"};
@@ -23,6 +25,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // ImageURLsContainer container = ImageURLsContainer.getInstance();
+        // container.printResult();
 
         viewPager = (ViewPager) findViewById(R.id.viewPager);
         viewPager.setAdapter(new CustomAdapter(getSupportFragmentManager(),getApplicationContext()));
