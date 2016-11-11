@@ -14,10 +14,10 @@ public class MainActivity extends AppCompatActivity {
     String[] opciones2 = {"X1","X2"};
     TabLayout tabLayout;
     ViewPager viewPager;
+
     Pant1 p1 = new Pant1();
     Pant2 p2 = new Pant2();
     Pant3 p3 = new Pant3();
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.setupWithViewPager(viewPager);
 
         tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 viewPager.setCurrentItem(tab.getPosition());
@@ -49,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private class CustomAdapter extends FragmentPagerAdapter {
-        private String frag [] = {"Posiciones", "Calendario", "Configuracion"};
+        private String fragments[] = {"Posiciones", "Calendario", "Configuracion"};
 
         public CustomAdapter(FragmentManager supportFragmentManager, Context applicationContext) {
             super(supportFragmentManager);
@@ -71,12 +72,12 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public int getCount() {
-            return frag.length;
+            return fragments.length;
         }
 
         @Override
-        public CharSequence getPageTitle(int position) {
-            return frag[position];
+        public CharSequence getPageTitle(int index) {
+            return fragments[index];
         }
     }
 }
