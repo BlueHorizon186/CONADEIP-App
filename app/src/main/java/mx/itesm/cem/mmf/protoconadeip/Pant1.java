@@ -26,7 +26,6 @@ public class Pant1 extends Fragment {
 
         View screenRootView = inflater.inflate(R.layout.pag1, container, false);
         Integer imageId = R.drawable.flower_ice;
-
         PositionsFetcher fetcher = new PositionsFetcher();
         String[] values = {"Error al cargar las posiciones actuales."};
 

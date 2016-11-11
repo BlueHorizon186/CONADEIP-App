@@ -20,7 +20,7 @@ public class CalendarFetcher extends AsyncTask<Integer, Void, JSONArray> {
         try {
             JSONObject calendarObj = new JSONObject(
                     jsonReader.readJSONFromServer(calendarUrl));
-            return calendarObj.getJSONArray("matchesInfo");
+            return calendarObj.optJSONArray("matchesInfo");
 
         } catch (Exception e) {
             e.printStackTrace();

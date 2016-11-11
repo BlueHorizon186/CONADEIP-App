@@ -21,7 +21,7 @@ public class PositionsFetcher extends AsyncTask<String, Void, JSONArray> {
         try {
             JSONObject positionsObj = new JSONObject(
                     jsonReader.readJSONFromServer(positionsUrl));
-            return positionsObj.getJSONArray("posiciones");
+            return positionsObj.optJSONArray("posiciones");
 
         } catch (Exception e) {
             e.printStackTrace();
