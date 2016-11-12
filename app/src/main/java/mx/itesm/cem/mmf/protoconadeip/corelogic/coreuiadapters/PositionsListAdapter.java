@@ -10,21 +10,24 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import org.json.JSONArray;
+
 import mx.itesm.cem.mmf.protoconadeip.R;
 import mx.itesm.cem.mmf.protoconadeip.corelogic.LogoDownloader;
 import mx.itesm.cem.mmf.protoconadeip.corelogic.corecache.LogoURLsContainer;
+import mx.itesm.cem.mmf.protoconadeip.corelogic.coreconstants.PositionData;
 
 /**
  * Created on 10/11/16.
  */
 
-public class PositionsListAdapter extends ArrayAdapter<String> {
+public class PositionsListAdapter extends ArrayAdapter<JSONArray> {
 
     private final Activity context;
-    private final String[] itemName;
+    private final JSONArray[] itemName;
     private final LogoURLsContainer logoUrls;
 
-    public PositionsListAdapter(Activity context, String[] itemName) {
+    public PositionsListAdapter(Activity context, JSONArray[] itemName) {
         super(context, R.layout.positions_listrow_layout, itemName);
         this.context = context;
         this.itemName = itemName;
@@ -37,29 +40,27 @@ public class PositionsListAdapter extends ArrayAdapter<String> {
 
         LogoDownloader logodnld = new LogoDownloader();
         Bitmap teamLogoBmp = null;
+        JSONArray next = itemName[index];
 
         ImageView teamLogoView = (ImageView) rowView.findViewById(R.id.teamIcon);
-        /*TextView playedGamesView = (TextView) rowView.findViewById(R.id.playedGamesValue);
+        TextView playedGamesView = (TextView) rowView.findViewById(R.id.playedGamesValue);
         TextView wonGamesView = (TextView) rowView.findViewById(R.id.wonGamesValue);
         TextView pointsView = (TextView) rowView.findViewById(R.id.pointsValue);
-        TextView percntView = (TextView) rowView.findViewById(R.id.percentageValue);*/
+        TextView percntView = (TextView) rowView.findViewById(R.id.percentageValue);
 
-        /*try {
+        try {
+            String nextLogoURL = logoUrls.getImageURLs()
+                    .getString(next.getString(PositionData.TEAM_NAME.num()));
+
             playedGamesView.setText(next.getString(PositionData.PLAYED_GAMES.num()));
             wonGamesView.setText(next.getString(PositionData.WON_GAMES.num()));
             pointsView.setText(next.getString(PositionData.POINTS.num()));
             percntView.setText(next.getString(PositionData.PERCENTAGE.num()));
 
-            Log.d("\n\nTeam: ", next.getString(PositionData.TEAM_NAME.num()));
+            /*Log.d("\n\nTeam: ", next.getString(PositionData.TEAM_NAME.num()));
             Log.d("\nPlayed: ", next.getString(PositionData.PLAYED_GAMES.num()));
-            Log.d("\nWon: ", next.getString(PositionData.WON_GAMES.num()));
+            Log.d("\nWon: ", next.getString(PositionData.WON_GAMES.num()));*/
 
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }*/
-
-        try {
-            String nextLogoURL = logoUrls.getImageURLs().getString(itemName[index]);
             teamLogoBmp = logodnld.execute(nextLogoURL).get();
 
         } catch (Exception e) {

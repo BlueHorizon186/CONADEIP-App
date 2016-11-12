@@ -26,22 +26,24 @@ public class Pant1 extends Fragment {
 
         View screenRootView = inflater.inflate(R.layout.pag1, container, false);
         PositionsFetcher fetcher = new PositionsFetcher();
-        String[] values = {"Error al cargar las posiciones actuales."};
+        //String[] values = {"Error al cargar las posiciones actuales."};
+        JSONArray[] values = null;
 
         try {
             JSONArray positionsArr = fetcher.execute("Mayor", "Independencia").get();
-            ArrayList<String> positionsLst = new ArrayList<>();
+            ArrayList<JSONArray> positionsLst = new ArrayList<>();
 
             for (int i = 0; i < positionsArr.length(); i++) {
                 JSONArray next = positionsArr.getJSONArray(i);
-                positionsLst.add(next.getString(PositionData.TEAM_NAME.num()));
-                /*String pos = next.getString(PositionData.TEAM_NAME.num()) + "  "
+                positionsLst.add(next);
+                /*positionsLst.add(next.getString(PositionData.TEAM_NAME.num()));
+                String pos = next.getString(PositionData.TEAM_NAME.num()) + "  "
                         + next.getString(PositionData.PLAYED_GAMES.num()) + "  "
                         + next.getString(PositionData.WON_GAMES.num()) + "  "
                         + next.getString(PositionData.POINTS.num()) + "  "
                         + next.getString(PositionData.PERCENTAGE.num());*/
             }
-            values = positionsLst.toArray(new String[positionsLst.size()]);
+            values = positionsLst.toArray(new JSONArray[positionsLst.size()]);
 
         } catch (Exception e) {
             e.printStackTrace();
