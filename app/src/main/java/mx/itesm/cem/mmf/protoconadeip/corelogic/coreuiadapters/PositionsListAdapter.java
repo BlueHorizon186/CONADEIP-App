@@ -22,13 +22,13 @@ public class PositionsListAdapter extends ArrayAdapter<String> {
 
     private final Activity context;
     private final String[] itemName;
-    private final Integer imgId;
+    private final Bitmap imgBmp;
 
-    public PositionsListAdapter(Activity context, String[] itemName, Integer imgId) {
+    public PositionsListAdapter(Activity context, String[] itemName, Bitmap imgBmp) {
         super(context, R.layout.positions_listrow_layout, itemName);
         this.context = context;
         this.itemName = itemName;
-        this.imgId = imgId;
+        this.imgBmp = imgBmp;
     }
 
     public View getView(int index, View view, ViewGroup parent) {
@@ -38,7 +38,7 @@ public class PositionsListAdapter extends ArrayAdapter<String> {
         ImageView teamLogoView = (ImageView) rowView.findViewById(R.id.teamIcon);
         TextView playedGamesView = (TextView) rowView.findViewById(R.id.playedGames);
 
-        teamLogoView.setImageResource(imgId);
+        teamLogoView.setImageBitmap(imgBmp);
         playedGamesView.setText(itemName[index]);
         return rowView;
     }
