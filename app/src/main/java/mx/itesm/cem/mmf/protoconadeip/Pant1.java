@@ -1,6 +1,5 @@
 package mx.itesm.cem.mmf.protoconadeip;
 
-import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -13,8 +12,6 @@ import org.json.JSONArray;
 
 import java.util.ArrayList;
 
-import mx.itesm.cem.mmf.protoconadeip.corelogic.LogoDownloader;
-import mx.itesm.cem.mmf.protoconadeip.corelogic.LogoURLsContainer;
 import mx.itesm.cem.mmf.protoconadeip.corelogic.PositionsFetcher;
 import mx.itesm.cem.mmf.protoconadeip.corelogic.coreconstants.PositionData;
 import mx.itesm.cem.mmf.protoconadeip.corelogic.coreuiadapters.PositionsListAdapter;
@@ -28,14 +25,8 @@ public class Pant1 extends Fragment {
                              @Nullable Bundle savedInstanceState) {
 
         View screenRootView = inflater.inflate(R.layout.pag1, container, false);
-        //Integer imageId = R.drawable.flower_ice;
         PositionsFetcher fetcher = new PositionsFetcher();
         String[] values = {"Error al cargar las posiciones actuales."};
-
-        LogoURLsContainer lContainer = LogoURLsContainer.getInstance();
-        LogoDownloader logodnld = new LogoDownloader();
-        String s = "";
-        Bitmap bmp = null;
 
         try {
             JSONArray positionsArr = fetcher.execute("Mayor", "Independencia").get();
@@ -50,26 +41,14 @@ public class Pant1 extends Fragment {
                         + next.getString(PositionData.POINTS.num()) + "  "
                         + next.getString(PositionData.PERCENTAGE.num());*/
             }
-
             values = positionsLst.toArray(new String[positionsLst.size()]);
-            s = lContainer.getImageURLs().getString("Ciudad de Mexico");
-            bmp = logodnld.execute(s).get();
 
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        /*
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(),
-                R.layout.positions_listrow_layout,
-                R.id.playedGames,
-                itemname);
-
-        ListView lv = (ListView) screenRootView.findViewById(R.id.positionsListView);
-        lv.setAdapter(adapter);*/
-
         PositionsListAdapter adapter =
-                new PositionsListAdapter(getActivity(), values, bmp);
+                new PositionsListAdapter(getActivity(), values);
         ListView lv = (ListView) screenRootView.findViewById(R.id.positionsListView);
         lv.setAdapter(adapter);
         return screenRootView;
