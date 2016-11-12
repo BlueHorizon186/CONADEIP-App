@@ -1,9 +1,11 @@
-package mx.itesm.cem.mmf.protoconadeip.corelogic;
+package mx.itesm.cem.mmf.protoconadeip.corelogic.corecache;
 
 import android.os.AsyncTask;
 import android.util.Log;
 
 import org.json.JSONObject;
+
+import mx.itesm.cem.mmf.protoconadeip.corelogic.JSONReader;
 
 /**
  * Created on 11/11/16.

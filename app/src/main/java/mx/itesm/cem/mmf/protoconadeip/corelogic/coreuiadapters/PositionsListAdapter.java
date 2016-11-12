@@ -2,7 +2,6 @@ package mx.itesm.cem.mmf.protoconadeip.corelogic.coreuiadapters;
 
 import android.app.Activity;
 import android.graphics.Bitmap;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,7 +11,7 @@ import android.widget.TextView;
 
 import mx.itesm.cem.mmf.protoconadeip.R;
 import mx.itesm.cem.mmf.protoconadeip.corelogic.LogoDownloader;
-import mx.itesm.cem.mmf.protoconadeip.corelogic.LogoURLsContainer;
+import mx.itesm.cem.mmf.protoconadeip.corelogic.corecache.LogoURLsContainer;
 
 /**
  * Created on 10/11/16.
