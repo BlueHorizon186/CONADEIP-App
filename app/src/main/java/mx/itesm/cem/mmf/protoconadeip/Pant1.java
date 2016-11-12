@@ -13,7 +13,6 @@ import org.json.JSONArray;
 import java.util.ArrayList;
 
 import mx.itesm.cem.mmf.protoconadeip.corelogic.PositionsFetcher;
-import mx.itesm.cem.mmf.protoconadeip.corelogic.coreconstants.PositionData;
 import mx.itesm.cem.mmf.protoconadeip.corelogic.coreuiadapters.PositionsListAdapter;
 
 public class Pant1 extends Fragment {
