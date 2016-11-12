@@ -2,6 +2,7 @@ package mx.itesm.cem.mmf.protoconadeip.corelogic.coreuiadapters;
 
 import android.app.Activity;
 import android.graphics.Bitmap;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,7 +31,7 @@ public class PositionsListAdapter extends ArrayAdapter<String> {
         this.logoUrls = LogoURLsContainer.getInstance();
     }
 
-    public View getView(int index, View view, ViewGroup parent) {
+    public View getView(final int index, View view, ViewGroup parent) {
         LayoutInflater inflater = context.getLayoutInflater();
         View rowView = inflater.inflate(R.layout.positions_listrow_layout, null, true);
 
@@ -38,11 +39,27 @@ public class PositionsListAdapter extends ArrayAdapter<String> {
         Bitmap teamLogoBmp = null;
 
         ImageView teamLogoView = (ImageView) rowView.findViewById(R.id.teamIcon);
-        //TextView playedGamesView = (TextView) rowView.findViewById(R.id.playedGames);
+        /*TextView playedGamesView = (TextView) rowView.findViewById(R.id.playedGamesValue);
+        TextView wonGamesView = (TextView) rowView.findViewById(R.id.wonGamesValue);
+        TextView pointsView = (TextView) rowView.findViewById(R.id.pointsValue);
+        TextView percntView = (TextView) rowView.findViewById(R.id.percentageValue);*/
+
+        /*try {
+            playedGamesView.setText(next.getString(PositionData.PLAYED_GAMES.num()));
+            wonGamesView.setText(next.getString(PositionData.WON_GAMES.num()));
+            pointsView.setText(next.getString(PositionData.POINTS.num()));
+            percntView.setText(next.getString(PositionData.PERCENTAGE.num()));
+
+            Log.d("\n\nTeam: ", next.getString(PositionData.TEAM_NAME.num()));
+            Log.d("\nPlayed: ", next.getString(PositionData.PLAYED_GAMES.num()));
+            Log.d("\nWon: ", next.getString(PositionData.WON_GAMES.num()));
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }*/
 
         try {
-            String nextLogoURL = logoUrls.getImageURLs().optString(itemName[index], "");
-            //Log.d("\nNext URL to Render:", nextLogoURL);
+            String nextLogoURL = logoUrls.getImageURLs().getString(itemName[index]);
             teamLogoBmp = logodnld.execute(nextLogoURL).get();
 
         } catch (Exception e) {
@@ -50,7 +67,6 @@ public class PositionsListAdapter extends ArrayAdapter<String> {
         }
 
         teamLogoView.setImageBitmap(teamLogoBmp);
-        //playedGamesView.setText(itemName[index]);
         return rowView;
     }
 }

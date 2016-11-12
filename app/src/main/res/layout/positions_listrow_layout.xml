@@ -58,25 +58,25 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_column="1"
-                android:text="8" />
+                android:id="@+id/playedGamesValue" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_column="2"
-                android:text="8" />
+                android:id="@+id/wonGamesValue" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_column="3"
-                android:text="16" />
+                android:id="@+id/pointsValue" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_column="4"
-                android:text="100%" />
+                android:id="@+id/percentageValue" />
         </TableRow>
 
     </TableLayout>
