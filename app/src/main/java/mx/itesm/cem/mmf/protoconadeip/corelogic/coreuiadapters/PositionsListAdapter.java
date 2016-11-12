@@ -38,7 +38,7 @@ public class PositionsListAdapter extends ArrayAdapter<String> {
         Bitmap teamLogoBmp = null;
 
         ImageView teamLogoView = (ImageView) rowView.findViewById(R.id.teamIcon);
-        TextView playedGamesView = (TextView) rowView.findViewById(R.id.playedGames);
+        //TextView playedGamesView = (TextView) rowView.findViewById(R.id.playedGames);
 
         try {
             String nextLogoURL = logoUrls.getImageURLs().optString(itemName[index], "");
@@ -50,7 +50,7 @@ public class PositionsListAdapter extends ArrayAdapter<String> {
         }
 
         teamLogoView.setImageBitmap(teamLogoBmp);
-        playedGamesView.setText(itemName[index]);
+        //playedGamesView.setText(itemName[index]);
         return rowView;
     }
 }

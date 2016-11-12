@@ -4,4 +4,8 @@
     <string name="P2">Pantalla 2</string>
     <string name="P3">Pantalla 3</string>
     <string name="team_logo">Team Logo</string>
+    <string name="playedGamesLabel">JJ</string>
+    <string name="wonGamesLabel">JG</string>
+    <string name="ptsLabel">Pts</string>
+    <string name="percentageLabel">%</string>
 </resources>
