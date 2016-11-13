@@ -35,12 +35,6 @@ public class Pant1 extends Fragment {
             for (int i = 0; i < positionsArr.length(); i++) {
                 JSONArray next = positionsArr.getJSONArray(i);
                 positionsLst.add(next);
-                /*positionsLst.add(next.getString(PositionData.TEAM_NAME.num()));
-                String pos = next.getString(PositionData.TEAM_NAME.num()) + "  "
-                        + next.getString(PositionData.PLAYED_GAMES.num()) + "  "
-                        + next.getString(PositionData.WON_GAMES.num()) + "  "
-                        + next.getString(PositionData.POINTS.num()) + "  "
-                        + next.getString(PositionData.PERCENTAGE.num());*/
             }
             values = positionsLst.toArray(new JSONArray[positionsLst.size()]);
 

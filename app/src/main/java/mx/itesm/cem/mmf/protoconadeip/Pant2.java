@@ -15,6 +15,7 @@ import java.util.ArrayList;
 
 import mx.itesm.cem.mmf.protoconadeip.corelogic.CalendarFetcher;
 import mx.itesm.cem.mmf.protoconadeip.corelogic.coreconstants.CalendarData;
+import mx.itesm.cem.mmf.protoconadeip.corelogic.coreuiadapters.CalendarListAdapter;
 
 /**
  * Created on 06/10/2016.
@@ -28,10 +29,10 @@ public class Pant2 extends Fragment {
                              @Nullable Bundle savedInstanceState) {
 
         View screenRootView = inflater.inflate(R.layout.pag2, container, false);
-        CalendarFetcher fetcher = new CalendarFetcher();
+        //CalendarFetcher fetcher = new CalendarFetcher();
         String[] values = {"Error al cargar el calendario actual."};
 
-        try {
+        /*try {
             JSONArray calendarArr = fetcher.execute(15).get();
             ArrayList<String> calendarAsLst = new ArrayList<>();
 
@@ -49,12 +50,11 @@ public class Pant2 extends Fragment {
 
         } catch (Exception e) {
             e.printStackTrace();
-        }
+        }*/
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(),
-                android.R.layout.simple_list_item_1, values);
-
-        ListView lv = (ListView) screenRootView.findViewById(R.id.listView2);
+        CalendarListAdapter adapter =
+                new CalendarListAdapter(getActivity(), values);
+        ListView lv = (ListView) screenRootView.findViewById(R.id.calendarListView);
         lv.setAdapter(adapter);
         return screenRootView;
     }

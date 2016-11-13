@@ -11,7 +11,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import org.json.JSONArray;
-import org.w3c.dom.Text;
 
 import mx.itesm.cem.mmf.protoconadeip.R;
 import mx.itesm.cem.mmf.protoconadeip.corelogic.LogoDownloader;
