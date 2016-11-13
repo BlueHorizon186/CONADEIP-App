@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import org.json.JSONArray;
+import org.w3c.dom.Text;
 
 import mx.itesm.cem.mmf.protoconadeip.R;
 import mx.itesm.cem.mmf.protoconadeip.corelogic.LogoDownloader;
@@ -43,6 +44,7 @@ public class PositionsListAdapter extends ArrayAdapter<JSONArray> {
         JSONArray next = itemName[index];
 
         ImageView teamLogoView = (ImageView) rowView.findViewById(R.id.teamIcon);
+        TextView teamNameView = (TextView) rowView.findViewById(R.id.teamNameValue);
         TextView playedGamesView = (TextView) rowView.findViewById(R.id.playedGamesValue);
         TextView wonGamesView = (TextView) rowView.findViewById(R.id.wonGamesValue);
         TextView pointsView = (TextView) rowView.findViewById(R.id.pointsValue);
@@ -52,6 +54,7 @@ public class PositionsListAdapter extends ArrayAdapter<JSONArray> {
             String nextLogoURL = logoUrls.getImageURLs()
                     .getString(next.getString(PositionData.TEAM_NAME.num()));
 
+            teamNameView.setText(next.getString(PositionData.TEAM_NAME.num()));
             playedGamesView.setText(next.getString(PositionData.PLAYED_GAMES.num()));
             wonGamesView.setText(next.getString(PositionData.WON_GAMES.num()));
             pointsView.setText(next.getString(PositionData.POINTS.num()));
