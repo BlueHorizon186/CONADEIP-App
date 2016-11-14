@@ -13,6 +13,6 @@
             android:id="@+id/calendarListView"
             android:layout_below="@+id/textView"
             android:layout_centerHorizontal="true"
-            android:background="@color/colorPrimary" />
+            android:background="@android:color/background_light" />
     </RelativeLayout>
 </LinearLayout>

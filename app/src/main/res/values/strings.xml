@@ -8,4 +8,5 @@
     <string name="wonGamesLabel">JG</string>
     <string name="ptsLabel">Pts</string>
     <string name="percentageLabel">Ptje</string>
+    <string name="VSLabel">VS</string>
 </resources>

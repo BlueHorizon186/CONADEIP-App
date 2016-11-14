@@ -4,22 +4,81 @@
     android:layout_height="match_parent"
     android:orientation="horizontal">
 
-    <LinearLayout
+    <TableLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_gravity="left">
+        android:stretchColumns="*">
+
+        <TableRow
+            android:paddingTop="10dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_gravity="start"
+                android:text="Home Team"
+                android:textAlignment="viewStart"
+                android:textColor="#0FB446" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="2"
+                android:text="@string/VSLabel"
+                android:textAlignment="center"
+                android:textSize="25sp"
+                android:textColor="#0FB446" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="3"
+                android:layout_gravity="end"
+                android:text="Visit Team"
+                android:textAlignment="viewEnd"
+                android:textColor="#0FB446" />
+        </TableRow>
+
+        <TableRow
+            android:paddingTop="5dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_gravity="start"
+                android:text="20"
+                android:textAlignment="viewStart"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#0FB446" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="2"
+                android:text="Game Status"
+                android:textAlignment="center"
+                android:textColor="#0FB446" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="3"
+                android:layout_gravity="end"
+                android:text="25"
+                android:textAlignment="viewEnd"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#0FB446" />
+        </TableRow>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Home Team" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Home Score" />
-
-    </LinearLayout>
+            android:paddingTop="5dp"
+            android:textAlignment="center"
+            android:text="Game Date"
+            android:textColor="#0FB446"/>
+    </TableLayout>
 
 </LinearLayout>
