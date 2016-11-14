@@ -79,6 +79,13 @@
             android:textAlignment="center"
             android:text="Game Date"
             android:textColor="#0FB446"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="Game Time"
+            android:textColor="#0FB446"/>
     </TableLayout>
 
 </LinearLayout>
