@@ -16,7 +16,7 @@
                 android:layout_height="wrap_content"
                 android:layout_column="1"
                 android:layout_gravity="start"
-                android:text="Home Team"
+                android:id="@+id/homeTeamValue"
                 android:textAlignment="viewStart"
                 android:textColor="#0FB446" />
 
@@ -34,7 +34,7 @@
                 android:layout_height="wrap_content"
                 android:layout_column="3"
                 android:layout_gravity="end"
-                android:text="Visit Team"
+                android:id="@+id/visitTeamValue"
                 android:textAlignment="viewEnd"
                 android:textColor="#0FB446" />
         </TableRow>
@@ -46,7 +46,7 @@
                 android:layout_height="wrap_content"
                 android:layout_column="1"
                 android:layout_gravity="start"
-                android:text="20"
+                android:id="@+id/homeScoreValue"
                 android:textAlignment="viewStart"
                 android:textSize="20sp"
                 android:textStyle="bold"
@@ -56,7 +56,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_column="2"
-                android:text="Game Status"
+                android:id="@+id/gameStatusValue"
                 android:textAlignment="center"
                 android:textColor="#0FB446" />
 
@@ -65,7 +65,7 @@
                 android:layout_height="wrap_content"
                 android:layout_column="3"
                 android:layout_gravity="end"
-                android:text="25"
+                android:id="@+id/visitScoreValue"
                 android:textAlignment="viewEnd"
                 android:textSize="20sp"
                 android:textStyle="bold"
@@ -77,14 +77,14 @@
             android:layout_height="wrap_content"
             android:paddingTop="5dp"
             android:textAlignment="center"
-            android:text="Game Date"
+            android:id="@+id/gameDateValue"
             android:textColor="#0FB446"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAlignment="center"
-            android:text="Game Time"
+            android:id="@+id/gameTimeValue"
             android:textColor="#0FB446"/>
     </TableLayout>
 
